@@ -3,15 +3,18 @@ class Solution:
     
     # Note that the size of the array is n-1
     def missingNumber(self, n, arr):
-        CorrectSum = n * (n+1)//2
+        expect_sum = 0
+        for i in range(1,n+1):
+            expect_sum += i
+            
+        actual_sum = sum(arr)
         
-        sum_of_given_arr = 0
-        for i in range(n-1):
-            sum_of_given_arr += arr[i]
+        missing_element = expect_sum - actual_sum
+        
+        return missing_element
             
-        element = CorrectSum - sum_of_given_arr
-        return element
-            
+        
+        # code here
 
 
 #{ 
