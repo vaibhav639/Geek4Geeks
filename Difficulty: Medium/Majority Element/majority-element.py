@@ -1,20 +1,23 @@
 #User function template for Python 3
 
 class Solution:
-    def majorityElement(self, A, N):
-        dic = {}
+    def majorityElement(self, arr):
+        freq = {}
+        n = len(arr)
         
-        for num in A:
-            if num in dic:
-                dic[num] += 1
+        for num in arr:
+            if num in freq:
+                freq[num] +=1
             else:
-                dic[num] = 1
+                freq[num] = 1
                 
-        for num,val in dic.items():
-            if dic[num] >  N//2:
+        for num,count in freq.items():
+            if count > n//2:
                 return num
-            
+                
         return -1
+
+
 #{ 
  # Driver Code Starts
 #Initial Template for Python 3
@@ -25,20 +28,18 @@ from sys import stdin
 
 
 def main():
-        T=int(input())
-        while(T>0):
-            
-            N=int(input())
+    T = int(input())
+    while (T > 0):
 
-            A=[int(x) for x in input().strip().split()]
-            
-            
-            obj = Solution()
-            print(obj.majorityElement(A,N))
-            
-            T-=1
+        A = [int(x) for x in input().strip().split()]
+
+        obj = Solution()
+        print(obj.majorityElement(A))
+
+        T -= 1
 
 
 if __name__ == "__main__":
     main()
+
 # } Driver Code Ends
