@@ -2,7 +2,20 @@
 
 class Solution:
     def segregateElements(self, arr):
-        arr.sort(key= lambda x: x<0)
+        # Your code goes here
+        
+        pos = []
+        neg = []
+        
+        for num in arr:
+            if num >= 0:
+                pos.append(num)
+            else:
+                neg.append(num)
+                
+        arr[:] = pos + neg
+        
+        return arr
 
 
 #{ 
