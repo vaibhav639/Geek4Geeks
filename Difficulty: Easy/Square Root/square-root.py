@@ -5,7 +5,7 @@ import math
 class Solution:
     def floorSqrt(self, n): 
     #Your code here
-        return int(math.sqrt(n))
+        return int(n**0.5)
 
 #{ 
  # Driver Code Starts
